@@ -1,0 +1,16 @@
+version: '2'
+services:
+  redis:
+    build: ./containers/redis/
+    ports:
+      - "6379:6379"
+
+  mysql:
+    build: ./containers/mysql/
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: star_development
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
